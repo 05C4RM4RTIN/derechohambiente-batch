@@ -1,3 +1,22 @@
+# Build tool artifacts
+target/
+build/
+.m2/
+
+# IDE Settings
+*.iml
+*.iws
+.project
+.classpath
+.settings/
+
+# Spring Boot & System files
+HELP.md
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
 # Compiled class file
 *.class
 
