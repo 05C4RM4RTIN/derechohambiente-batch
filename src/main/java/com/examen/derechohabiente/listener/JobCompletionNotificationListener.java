@@ -1,4 +1,4 @@
-package com.examen.derechohabiente.config;
+package com.examen.derechohabiente.listener;
 
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.job.JobExecution;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.examen.derechohabiente.entity.DerechoHambiente;
+import com.examen.derechohabiente.entity.DerechoHabiente;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,10 +26,9 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 	  public void afterJob(JobExecution jobExecution) {
 	    if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 	      log.info("Carga finalizada");
-
 	      jdbcTemplate
-	          .query("SELECT id,nombre,ciudad,importe,cuenta FROM derecho_hambiente", new DataClassRowMapper<>(DerechoHambiente.class))
+	          .query("SELECT id,nombre,ciudad,importe,cuenta FROM derecho_habiente", new DataClassRowMapper<>(DerechoHabiente.class))
 	          .forEach(derechoHambiente -> log.info("Found <{}> in the database.", derechoHambiente));
 	    }
-	  }
+	  }	  
 	}

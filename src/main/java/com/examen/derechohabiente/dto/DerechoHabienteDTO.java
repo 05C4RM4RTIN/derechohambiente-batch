@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DerechoHambienteDTO {
+public class DerechoHabienteDTO {
 	
 	private Long id;
 	private String nombre;

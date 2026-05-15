@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class DerechoHambiente {	
+public class DerechoHabiente {	
 	
 		@Id
 		private Long id;
